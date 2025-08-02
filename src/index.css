@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CA Portfolio Design System - Professional & Modern */
+
+@layer base {
+  :root {
+    /* Core brand colors */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    
+    /* Professional color palette */
+    --primary: 180 85% 25%; /* Deep teal #0F4C75 */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 180 70% 35%;
+    --primary-glow: 180 85% 30%;
+    
+    --accent: 45 100% 51%; /* Gold #FFB300 */
+    --accent-foreground: 222 47% 11%;
+    --accent-light: 45 100% 65%;
+    
+    --secondary: 220 13% 98%; /* Soft light gray #FAFAFA */
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 220 13% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
+    
+    /* Shadows */
+    --shadow-professional: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 2px 16px -2px hsl(var(--primary) / 0.08);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Supporting colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 237 85% 29%;
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@layer utilities {
+  /* Shadow utilities */
+  .shadow-professional {
+    box-shadow: var(--shadow-professional);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer components {
+  /* Professional button variants */
+  .btn-professional {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-8 py-4 rounded-lg font-semibold shadow-professional hover:shadow-card transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground px-6 py-3 rounded-lg font-medium shadow-card hover:shadow-glow transition-all duration-300;
+  }
+  
+  .btn-whatsapp {
+    @apply bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-card hover:shadow-glow transition-all duration-300 hover:scale-105 flex items-center gap-2;
+  }
+  
+  /* Card styles */
+  .card-professional {
+    @apply bg-card border border-border rounded-xl shadow-card hover:shadow-professional transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  /* Animation classes */
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .slide-up {
+    @apply opacity-0 translate-y-12 transition-all duration-500 ease-out;
+  }
+  
+  .slide-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Enhanced animations */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+  
+  @keyframes pulseSlow {
+    0%, 100% { 
+      opacity: 1; 
+    }
+    50% { 
+      opacity: 0.7; 
+    }
+  }
+  
+  /* Typography */
+  .heading-hero {
+    @apply font-heading font-bold text-4xl md:text-6xl lg:text-7xl leading-tight;
+  }
+  
+  .heading-section {
+    @apply font-heading font-semibold text-3xl md:text-4xl mb-6;
+  }
+  
+  .heading-card {
+    @apply font-heading font-semibold text-xl mb-4;
+  }
+}
