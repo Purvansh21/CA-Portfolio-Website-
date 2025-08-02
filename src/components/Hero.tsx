@@ -36,7 +36,7 @@ const Hero = () => {
           {/* Content */}
           <div className={`text-white space-y-8 ${isVisible ? 'fade-in animate' : 'fade-in'}`}>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3 mb-6">
+              <div className="flex items-center space-x-3 mb-6 mt-8">
                 <Award className="text-accent" size={24} />
                 <span className="text-accent font-medium">ICAI Registered</span>
                 <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -45,7 +45,7 @@ const Hero = () => {
               
               <h1 className="heading-hero text-white leading-tight animate-fade-in">
                 Expert Financial, Tax & 
-                <span className="text-accent block animate-pulse-slow">Business Solutions</span>
+                <span className="text-accent block animate-slide-in-right">Business Solutions</span>
               </h1>
               
               <p className="text-xl text-primary-foreground leading-relaxed max-w-lg animate-fade-in delay-300">
