@@ -53,7 +53,7 @@ const Contact = () => {
 
   const openWhatsApp = () => {
     const message = `Hello, I'm ${formData.name || 'interested in your services'}. ${formData.message || "I'd like to consult with CA Deepesh Sawant."}`;
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/919819313251?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

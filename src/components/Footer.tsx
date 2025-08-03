@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919876543210?text=Hello,%20I'd%20like%20to%20consult%20with%20CA%20Deepesh%20Sawant", "_blank");
+    window.open("https://wa.me/919819313251?text=Hello,%20I'd%20like%20to%20consult%20with%20CA%20Deepesh%20Sawant", "_blank");
   };
 
   return (
@@ -116,26 +116,25 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="text-accent mt-1 flex-shrink-0" size={18} />
                 <div className="text-white/80 text-sm">
-                  123 Business Center, Andheri East<br />
-                  Mumbai, Maharashtra 400069
+                  Mumbai, India
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="text-accent flex-shrink-0" size={18} />
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+919819313251" 
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
-                  +91 98765 43210
+                  +91 98193 13251
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="text-accent flex-shrink-0" size={18} />
                 <a 
-                  href="mailto:ca.deepesh@example.com" 
+                  href="mailto:cadeepesh.sawant@gmail.com" 
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
-                  ca.deepesh@example.com
+                  cadeepesh.sawant@gmail.com
                 </a>
               </div>
             </div>

@@ -153,7 +153,7 @@ const Industries = () => {
 
             <div className="text-center mt-12">
               <button 
-                onClick={() => window.open("https://wa.me/919876543210?text=Hello,%20I'd%20like%20to%20know%20about%20your%20international%20services", "_blank")}
+                onClick={() => window.open("https://wa.me/919819313251?text=Hello,%20I'd%20like%20to%20know%20about%20your%20international%20services", "_blank")}
                 className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-colors duration-300 inline-flex items-center gap-2"
               >
                 <Globe size={20} />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Phone, Mail, MessageCircle, Award, Globe, Users } from "lucide-react";
-import heroImage from "@/assets/hero-deepesh.jpg";
+// Add your photo import here:
+// import myPhoto from "@/assets/my-photo.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919876543210?text=Hello,%20I'd%20like%20to%20consult%20with%20CA%20Deepesh%20Sawant", "_blank");
+    window.open("https://wa.me/919819313251?text=Hello,%20I'd%20like%20to%20consult%20with%20CA%20Deepesh%20Sawant", "_blank");
   };
 
   const scrollToNext = () => {
@@ -36,7 +37,7 @@ const Hero = () => {
           {/* Content */}
           <div className={`text-white space-y-8 ${isVisible ? 'fade-in animate' : 'fade-in'}`}>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3 mb-6 mt-8">
+              <div className="flex items-center space-x-3 mb-6 mt-12">
                 <Award className="text-accent" size={24} />
                 <span className="text-accent font-medium">ICAI Registered</span>
                 <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -48,7 +49,7 @@ const Hero = () => {
                 <span className="text-accent block animate-slide-in-right">Business Solutions</span>
               </h1>
               
-              <p className="text-xl text-primary-foreground leading-relaxed max-w-lg animate-fade-in delay-300">
+              <p className="text-xl text-white/90 leading-relaxed max-w-lg animate-fade-in delay-300">
                 Your trusted partner for comprehensive accounting, taxation, and business advisory services across India and worldwide.
               </p>
             </div>
@@ -71,30 +72,29 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="mailto:ca.deepesh@example.com"
-                className="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold hover:bg-accent-light transition-all duration-300 flex items-center justify-center gap-2 shadow-professional hover:shadow-glow hover:scale-105"
+              <button 
+                onClick={scrollToNext}
+                className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-light transition-all duration-300 flex items-center justify-center gap-2 shadow-professional hover:shadow-glow hover:scale-105"
               >
-                <Mail size={20} />
-                Email Now
-              </a>
+                GET STARTED
+              </button>
             </div>
 
             {/* Quick Contact */}
             <div className="flex flex-col sm:flex-row gap-4 text-white/80">
               <a 
-                href="mailto:ca.deepesh@example.com"
+                href="mailto:cadeepesh.sawant@gmail.com"
                 className="flex items-center gap-2 hover:text-accent transition-colors"
               >
                 <Mail size={18} />
-                ca.deepesh@example.com
+                cadeepesh.sawant@gmail.com
               </a>
               <a 
-                href="tel:+919876543210"
+                href="tel:+919819313251"
                 className="flex items-center gap-2 hover:text-accent transition-colors"
               >
                 <Phone size={18} />
-                +91 98765 43210
+                +91 98193 13251
               </a>
             </div>
           </div>
@@ -107,14 +107,19 @@ const Hero = () => {
               
               {/* Main Image */}
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20">
+                {/* Replace 'my-photo.jpg' with your actual photo filename */}
                 <img
-                  src={heroImage}
+                  src="/src/assets/my-photo.jpg"
                   alt="CA Deepesh Sawant - Professional Chartered Accountant"
                   className="w-full h-auto rounded-2xl shadow-2xl"
+                  onError={(e) => {
+                    // Fallback if image doesn't exist
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
                 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full shadow-glow font-semibold">
+                <div className="absolute -bottom-4 -right-4 bg-accent text-white px-6 py-3 rounded-full shadow-glow font-semibold">
                   Trusted CA
                 </div>
               </div>

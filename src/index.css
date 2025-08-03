@@ -4,23 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CA Portfolio Design System - Professional & Modern */
+/* CA Portfolio Design System - Professional Blue Theme */
 
 @layer base {
   :root {
-    /* Core brand colors */
+    /* Core brand colors - Blue Theme */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
     
-    /* Professional color palette */
-    --primary: 180 85% 25%; /* Deep teal #0F4C75 */
+    /* Professional blue color palette matching the accounting firm */
+    --primary: 220 85% 25%; /* Dark blue #1e3a8a */
     --primary-foreground: 0 0% 98%;
-    --primary-light: 180 70% 35%;
-    --primary-glow: 180 85% 30%;
+    --primary-light: 220 70% 35%; /* Lighter blue */
+    --primary-glow: 220 85% 30%;
     
-    --accent: 45 100% 51%; /* Gold #FFB300 */
+    --accent: 25 95% 53%; /* Orange #ff6b35 */
     --accent-foreground: 222 47% 11%;
-    --accent-light: 45 100% 65%;
+    --accent-light: 25 95% 65%;
     
     --secondary: 220 13% 98%; /* Soft light gray #FAFAFA */
     --secondary-foreground: 222 47% 11%;
@@ -54,7 +54,7 @@
     
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 237 85% 29%;
+    --ring: 220 85% 25%;
     
     --radius: 0.75rem;
 

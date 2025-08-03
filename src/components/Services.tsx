@@ -130,7 +130,7 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                onClick={() => window.open("https://wa.me/919876543210?text=Hello,%20I'd%20like%20to%20consult%20about%20your%20services", "_blank")}
+                onClick={() => window.open("https://wa.me/919819313251?text=Hello,%20I'd%20like%20to%20consult%20about%20your%20services", "_blank")}
                 className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-colors duration-300 flex items-center justify-center gap-2"
               >
                 <Users size={20} />
