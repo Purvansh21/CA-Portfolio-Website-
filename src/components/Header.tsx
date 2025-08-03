@@ -29,22 +29,17 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50">
       {/* Top Contact Bar */}
       <div className="bg-primary text-white py-2 px-6">
-        <div className="container mx-auto flex items-center justify-between text-sm">
-          <div className="flex items-center space-x-6">
-            <a 
-              href="mailto:cadeepesh.sawant@gmail.com"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Mail size={16} />
-              cadeepesh.sawant@gmail.com
-            </a>
-            <a 
-              href="tel:+919819313251"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Phone size={16} />
-              +91-9819313251
-            </a>
+        <div className="container mx-auto flex items-center justify-center text-sm">
+          <div className="flex items-center space-x-3 md:space-x-6">
+            <div className="flex items-center gap-1 md:gap-2 text-xs">
+              <Mail size={12} className="md:w-4 md:h-4" />
+              <span className="hidden md:inline">cadeepesh.sawant@gmail.com</span>
+              <span className="md:hidden">cadeepesh.sawant@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-1 md:gap-2 text-xs">
+              <Phone size={12} className="md:w-4 md:h-4" />
+              <span className="whitespace-nowrap">+91-9819313251</span>
+            </div>
           </div>
         </div>
       </div>

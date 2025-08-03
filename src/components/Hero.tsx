@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Phone, Mail, MessageCircle, Award, Globe, Users } from "lucide-react";
-// Add your photo import here:
-// import myPhoto from "@/assets/my-photo.jpg";
+// Import your photo properly
+import myPhoto from "@/assets/my-photo.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -107,15 +107,10 @@ const Hero = () => {
               
               {/* Main Image */}
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20">
-                {/* Replace 'my-photo.jpg' with your actual photo filename */}
                 <img
-                  src="/src/assets/my-photo.jpg"
+                  src={myPhoto}
                   alt="CA Deepesh Sawant - Professional Chartered Accountant"
                   className="w-full h-auto rounded-2xl shadow-2xl"
-                  onError={(e) => {
-                    // Fallback if image doesn't exist
-                    e.currentTarget.style.display = 'none';
-                  }}
                 />
                 
                 {/* Floating Badge */}
