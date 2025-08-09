@@ -88,6 +88,13 @@ const Hero = () => {
                 cadeepesh.sawant@gmail.com
               </a>
               <a 
+                href="mailto:office@dscafirm.com"
+                className="flex items-center gap-2 hover:text-accent transition-colors"
+              >
+                <Mail size={18} />
+                office@dscafirm.com
+              </a>
+              <a 
                 href="tel:+919819313251"
                 className="flex items-center gap-2 hover:text-accent transition-colors"
               >
