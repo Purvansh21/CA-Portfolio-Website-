@@ -12,6 +12,7 @@ const About = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           animateCounters();
+          if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
       { threshold: 0.3 }
@@ -25,24 +26,36 @@ const About = () => {
   }, []);
 
   const animateCounters = () => {
-    const targets = { experience: 15, clients: 500, countries: 7, growth: 98 };
-    const duration = 2000;
-    const increment = 50;
+    const targets = { experience: 15, clients: 500, countries: 5, growth: 98 } as const;
 
-    Object.keys(targets).forEach(key => {
-      let current = 0;
-      const target = targets[key as keyof typeof targets];
-      const step = target / (duration / increment);
+    // Respect reduced motion preferences and low-power devices
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCounters({ ...targets });
+      return;
+    }
 
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
-      }, increment);
-    });
+    const durationMs = 1200;
+    const start = performance.now();
+
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const frame = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / durationMs, 1);
+      const eased = easeOutCubic(progress);
+
+      setCounters({
+        experience: Math.floor(targets.experience * eased),
+        clients: Math.floor(targets.clients * eased),
+        countries: Math.floor(targets.countries * eased),
+        growth: Math.floor(targets.growth * eased),
+      });
+
+      if (progress < 1) requestAnimationFrame(frame);
+    };
+
+    requestAnimationFrame(frame);
   };
 
   return (
@@ -66,7 +79,7 @@ const About = () => {
               </p>
               
               <p>
-                With over 15 years of experience and ICAI registration, I provide comprehensive financial solutions 
+                With over 15 years of experience, I provide comprehensive financial solutions 
                 that drive business growth. My practice combines traditional accounting expertise with modern 
                 technology to deliver efficient, accurate, and timely services to clients worldwide.
               </p>
@@ -83,8 +96,8 @@ const About = () => {
                 <Award className="text-white" size={24} />
               </div>
               <div>
-                <h4 className="font-heading font-semibold text-primary">ICAI Registered</h4>
-                <p className="text-muted-foreground">Institute of Chartered Accountants of India</p>
+                <h4 className="font-heading font-semibold text-primary">Trusted Professional</h4>
+                <p className="text-muted-foreground">Delivering excellence and integrity</p>
               </div>
             </div>
           </div>
@@ -104,14 +117,14 @@ const About = () => {
                 <Users className="text-white" size={24} />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">{counters.clients}+</div>
-              <div className="text-muted-foreground font-medium">Clients Served</div>
+              <div className="text-muted-foreground font-medium">Assignments Handled</div>
             </div>
 
             <div className="card-professional p-8 text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="text-white" size={24} />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">{counters.countries}</div>
+              <div className="text-4xl font-bold text-primary mb-2">{counters.countries}+</div>
               <div className="text-muted-foreground font-medium">Countries</div>
             </div>
 

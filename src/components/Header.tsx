@@ -9,7 +9,7 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -60,8 +60,8 @@ const Header = () => {
                 <span className="text-primary font-bold text-lg">CA</span>
               </div>
               <div>
-                <h1 className="font-heading font-bold text-lg text-white">CA Deepesh Sawant</h1>
-                <p className="text-sm text-white/80">Chartered Accountants</p>
+                <h1 className="font-heading font-bold text-lg text-accent">CA Deepesh Sawant</h1>
+                <p className="text-sm text-accent/80">Chartered Accountants</p>
               </div>
             </div>
 
@@ -69,31 +69,31 @@ const Header = () => {
             <nav className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection("home")}
-                className="text-white font-medium transition-all duration-300 hover:text-accent hover:scale-105"
+                className="text-accent font-medium transition-all duration-300 hover:text-white hover:scale-105"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection("about")}
-                className="text-white font-medium transition-all duration-300 hover:text-accent hover:scale-105"
+                className="text-accent font-medium transition-all duration-300 hover:text-white hover:scale-105"
               >
                 About Us
               </button>
               <button 
                 onClick={() => scrollToSection("services")}
-                className="text-white font-medium transition-all duration-300 hover:text-accent hover:scale-105"
+                className="text-accent font-medium transition-all duration-300 hover:text-white hover:scale-105"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection("industries")}
-                className="text-white font-medium transition-all duration-300 hover:text-accent hover:scale-105"
+                className="text-accent font-medium transition-all duration-300 hover:text-white hover:scale-105"
               >
                 Industries
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="text-white font-medium transition-all duration-300 hover:text-accent hover:scale-105"
+                className="text-accent font-medium transition-all duration-300 hover:text-white hover:scale-105"
               >
                 Contact Us
               </button>
@@ -125,31 +125,31 @@ const Header = () => {
               <nav className="flex flex-col space-y-2">
                 <button 
                   onClick={() => scrollToSection("home")}
-                  className="text-left text-white hover:text-accent hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                  className="text-left text-accent hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => scrollToSection("about")}
-                  className="text-left text-white hover:text-accent hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                  className="text-left text-accent hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
                 >
                   About Us
                 </button>
                 <button 
                   onClick={() => scrollToSection("services")}
-                  className="text-left text-white hover:text-accent hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                  className="text-left text-accent hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
                 >
                   Services
                 </button>
                 <button 
                   onClick={() => scrollToSection("industries")}
-                  className="text-left text-white hover:text-accent hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                  className="text-left text-accent hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
                 >
                   Industries
                 </button>
                 <button 
                   onClick={() => scrollToSection("contact")}
-                  className="text-left text-white hover:text-accent hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                  className="text-left text-accent hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
                 >
                   Contact Us
                 </button>

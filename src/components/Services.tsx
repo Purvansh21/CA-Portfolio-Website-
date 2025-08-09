@@ -21,6 +21,7 @@ const Services = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
       { threshold: 0.2 }
@@ -41,6 +42,17 @@ const Services = () => {
       features: ["Monthly Bookkeeping", "Financial Statements", "Cash Flow Management", "Multi-Currency Support"]
     },
     {
+      icon: Globe,
+      title: "International Taxation",
+      description: "Key Areas of International Taxation Services",
+      features: [
+        "Cross-border structuring and DTAA planning",
+        "PE risk and withholding tax planning",
+        "Transfer pricing documentation, CbCR and APA support",
+        "Global compliance: FATCA/CRS, BEPS, and representation"
+      ]
+    },
+    {
       icon: FileText,
       title: "Tax & Compliance",
       description: "Complete tax solutions including Income Tax, GST, TDS compliance, and specialized NRI taxation services.",
@@ -54,15 +66,14 @@ const Services = () => {
     },
     {
       icon: TrendingUp,
-      title: "Business Advisory",
-      description: "Strategic business consulting including financial planning, budgeting, and fundraising support.",
-      features: ["Financial Planning", "Budget Preparation", "Business Strategy", "Fundraising Support"]
-    },
-    {
-      icon: Building,
-      title: "Business Setup & Legal",
-      description: "End-to-end business incorporation services for companies, LLPs, trusts, and NGOs.",
-      features: ["Company Registration", "LLP Formation", "Trust Registration", "NGO Setup"]
+      title: "Business Advisory & Setup",
+      description: "Strategic business consulting and end-to-end incorporation services.",
+      features: [
+        "Financial planning & budgeting",
+        "Business strategy & fundraising",
+        "Company/LLP incorporation",
+        "Trust/NGO registration"
+      ]
     },
     {
       icon: BarChart3,
@@ -73,7 +84,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background" ref={sectionRef}>
+    <section id="services" className="py-20 bg-secondary md:bg-background" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className={`text-center mb-16 ${isVisible ? 'fade-in animate' : 'fade-in'}`}>

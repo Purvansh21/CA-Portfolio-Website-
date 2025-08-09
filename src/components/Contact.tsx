@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background" ref={sectionRef}>
+    <section id="contact" className="py-20 bg-secondary md:bg-background" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className={`text-center mb-16 ${isVisible ? 'fade-in animate' : 'fade-in'}`}>

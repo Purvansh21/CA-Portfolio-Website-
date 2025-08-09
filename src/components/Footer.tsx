@@ -137,6 +137,15 @@ const Footer = () => {
                   cadeepesh.sawant@gmail.com
                 </a>
               </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="text-accent flex-shrink-0" size={18} />
+                <a 
+                  href="mailto:office@dscafirm.com" 
+                  className="text-white/80 hover:text-accent transition-colors text-sm"
+                >
+                  office@dscafirm.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -148,10 +157,6 @@ const Footer = () => {
               © {currentYear} CA Deepesh Sawant & Associates. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-white/80">
-              <span>ICAI Registered</span>
-              <span>•</span>
-              <span>ISO Certified</span>
-              <span>•</span>
               <span>Trusted Since 2009</span>
             </div>
           </div>

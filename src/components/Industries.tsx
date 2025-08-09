@@ -19,6 +19,7 @@ const Industries = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
       { threshold: 0.2 }
@@ -64,20 +65,20 @@ const Industries = () => {
     },
     {
       icon: GraduationCap,
-      title: "Education & NGOs",
-      description: "Educational institutions, non-profits, and social organizations",
+      title: "Education, Hospitals & NGOs",
+      description: "Educational institutions, hospitals, non-profits, and social organizations",
       color: "from-indigo-500 to-indigo-600"
     }
   ];
 
   const countries = [
-    { name: "India", flag: "🇮🇳", description: "Comprehensive local expertise" },
-    { name: "USA", flag: "🇺🇸", description: "Cross-border tax & compliance" },
-    { name: "UK", flag: "🇬🇧", description: "International business setup" },
-    { name: "Canada", flag: "🇨🇦", description: "Immigration & business advisory" },
-    { name: "Australia", flag: "🇦🇺", description: "Offshore company management" },
-    { name: "UAE", flag: "🇦🇪", description: "Middle East business solutions" },
-    { name: "Singapore", flag: "🇸🇬", description: "Asia-Pacific operations" }
+    { code: "in", name: "India", description: "Comprehensive local expertise" },
+    { code: "us", name: "USA", description: "Cross-border tax & compliance" },
+    { code: "gb", name: "UK", description: "International business setup" },
+    { code: "ca", name: "Canada", description: "Immigration & business advisory" },
+    { code: "au", name: "Australia", description: "Offshore company management" },
+    { code: "ae", name: "UAE", description: "Middle East business solutions" },
+    { code: "sg", name: "Singapore", description: "Asia-Pacific operations" }
   ];
 
   return (
@@ -85,7 +86,7 @@ const Industries = () => {
       <div className="container mx-auto px-6">
         {/* Industries Section */}
         <div className={`text-center mb-16 ${isVisible ? 'fade-in animate' : 'fade-in'}`}>
-          <h2 className="heading-section text-primary">Industries We Serve</h2>
+          <h2 className="heading-section text-primary">Sectors We Cater</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-light mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Specialized expertise across diverse industry verticals with deep understanding of sector-specific requirements.
@@ -129,7 +130,7 @@ const Industries = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-12 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-6 md:p-12 text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <Globe size={200} className="absolute -top-16 -right-16" />
@@ -142,8 +143,8 @@ const Industries = () => {
                   key={index}
                   className="text-center group cursor-pointer"
                 >
-                  <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">
-                    {country.flag}
+                  <div className="mb-3 group-hover:scale-125 transition-transform duration-300">
+                    <span className={`fi fi-${country.code} fis text-3xl`} aria-hidden="true"></span>
                   </div>
                   <h4 className="font-semibold text-lg mb-2">{country.name}</h4>
                   <p className="text-white/80 text-sm">{country.description}</p>
@@ -151,15 +152,7 @@ const Industries = () => {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <button 
-                onClick={() => window.open("https://wa.me/919819313251?text=Hello,%20I'd%20like%20to%20know%20about%20your%20international%20services", "_blank")}
-                className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-colors duration-300 inline-flex items-center gap-2"
-              >
-                <Globe size={20} />
-                Explore International Services
-              </button>
-            </div>
+
           </div>
         </div>
       </div>

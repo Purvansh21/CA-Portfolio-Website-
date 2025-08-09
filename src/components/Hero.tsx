@@ -39,8 +39,6 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 mb-6 mt-12">
                 <Award className="text-accent" size={24} />
-                <span className="text-accent font-medium">ICAI Registered</span>
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
                 <span className="text-accent font-medium">15+ Years Experience</span>
               </div>
               
@@ -58,10 +56,10 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-6 py-6 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent mb-1">500+</div>
-                <div className="text-sm text-white/80">Clients Served</div>
+                <div className="text-sm text-white/80">Assignments Handled</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-1">7</div>
+                <div className="text-3xl font-bold text-accent mb-1">5+</div>
                 <div className="text-sm text-white/80">Countries</div>
               </div>
               <div className="text-center">
